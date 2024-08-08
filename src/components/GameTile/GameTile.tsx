@@ -1,3 +1,5 @@
+import { Button } from './GameTile.style';
+
 type Player = 'x' | 'o';
 
 type Props = {
@@ -5,7 +7,7 @@ type Props = {
 };
 
 const GameTile = ({ value }: Props) => {
-  return <button style={{ height: '100px' }}>{value}</button>;
+  return <Button>{value}</Button>;
 };
 
 export default GameTile;
