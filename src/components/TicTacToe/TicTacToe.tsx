@@ -1,8 +1,10 @@
+import { GameBoard } from '../GameBoard';
+
 const TicTacToe = () => {
   return (
     <div data-testid="tic-tac-toe">
       <p>game state goes here</p>
-      <div>game board goes here</div>
+      <GameBoard size={3} />
       <form>
         <label>
           Input grid size:
