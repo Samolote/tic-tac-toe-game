@@ -1,3 +1,5 @@
+import { GameTile } from '../GameTile';
+
 type Props = {
   size: number;
 };
@@ -15,7 +17,7 @@ const GameBoard = ({ size }: Props) => {
       }}
     >
       {board.map((_, i) => (
-        <button key={i} style={{ height: '100px' }}></button>
+        <GameTile value={null} key={i} />
       ))}
     </div>
   );
