@@ -1,6 +1,5 @@
 import { Button } from './GameTile.style';
-
-type Player = 'x' | 'o';
+import type { Player } from '../../types/player';
 
 type Props = {
   value: Player | null;
