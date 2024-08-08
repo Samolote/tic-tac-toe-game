@@ -1,9 +1,10 @@
+import { GameStatus } from '../GameStatus';
 import { GameBoard } from '../GameBoard';
 
 const TicTacToe = () => {
   return (
     <div data-testid="tic-tac-toe">
-      <p>game state goes here</p>
+      <GameStatus>game state goes here</GameStatus>
       <GameBoard size={3} />
       <form>
         <label>
