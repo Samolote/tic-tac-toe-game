@@ -5,9 +5,11 @@ import { GameForm } from '../GameForm';
 import { ticTacToeMachine } from '../../machines/ticTacToeMachine';
 
 const TicTacToe = () => {
-  const [state] = useMachine(ticTacToeMachine);
+  const [state, send] = useMachine(ticTacToeMachine);
 
-  const { winner, player } = state.context;
+  const { player, winner, boardSize, board } = state.context;
+
+  const makeMove = (squareId: number) => send({ type: 'MAKE_MOVE', squareId });
 
   return (
     <div data-testid="tic-tac-toe">
@@ -17,7 +19,9 @@ const TicTacToe = () => {
         {state.matches('won') && `Winner: ${winner}`}
         {state.matches('draw') && `Draw`}
       </GameStatus>
-      <GameBoard size={3} />
+      {!state.matches('idle') && (
+        <GameBoard boardSize={boardSize} board={board} makeMove={makeMove} />
+      )}
       <GameForm />
     </div>
   );

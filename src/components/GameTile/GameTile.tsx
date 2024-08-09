@@ -2,11 +2,12 @@ import { Button } from './GameTile.style';
 import type { Player } from '../../types/player';
 
 type Props = {
-  value: Player | null;
+  displayValue: Player | null;
+  makeMove: () => void;
 };
 
-const GameTile = ({ value }: Props) => {
-  return <Button>{value}</Button>;
+const GameTile = ({ displayValue, makeMove }: Props) => {
+  return <Button onClick={makeMove}>{displayValue}</Button>;
 };
 
 export default GameTile;

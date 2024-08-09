@@ -1,17 +1,18 @@
+import { Player } from '../../types/player';
 import { GameTile } from '../GameTile';
 import { BoardGrid } from './GameBoard.style';
 
 type Props = {
-  size: number;
+  boardSize: number;
+  board: Array<Player | null>;
+  makeMove: (squareId: number) => void;
 };
 
-const GameBoard = ({ size }: Props) => {
-  const board = Array(size * size).fill(null);
-
+const GameBoard = ({ boardSize, board, makeMove }: Props) => {
   return (
-    <BoardGrid $size={size} data-testid="game-board">
-      {board.map((_, i) => (
-        <GameTile value={null} key={i} />
+    <BoardGrid $boardSize={boardSize} data-testid="game-board">
+      {board.map((value, i) => (
+        <GameTile displayValue={value} key={i} makeMove={() => makeMove(i)} />
       ))}
     </BoardGrid>
   );
