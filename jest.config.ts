@@ -8,7 +8,7 @@ const config: Config.InitialOptions = {
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
   },
   coverageReporters: ['text'],
-  collectCoverageFrom: ['src/components/**/*.tsx'],
+  collectCoverageFrom: ['src/components/**/*.tsx', '!src/components/**/*.style.tsx'],
 };
 
 export default config;
