@@ -1,7 +1,7 @@
 # Tic-Tac-Toe Game
 
 This project was bootstrapped with [Vite](https://vitejs.dev) and made with: **React** + **XState** + **styled-components** as recruitment task. \
-First contact with XState and style-components. Hopefully you'll consider the code of good quality. :)
+First contact with XState and style-components.
 
 ## Project setup
 
